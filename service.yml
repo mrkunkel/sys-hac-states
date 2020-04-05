@@ -1,0 +1,15 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: sys-hac-states
+  namespace: kns
+spec:
+  template:
+    spec:
+      containers:
+      - image: docker.io/mrkunkel/sys-hac-states
+        env:
+        - name: HAC_URL
+          value: "http://haha.local"
+        - name: HAC_TOKEN
+          value: "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
